@@ -1,5 +1,4 @@
 import React from 'react'
-import { styled } from '../../stitches'
 
 type ButtonType = 'icon' | 'text' | 'iconWithText'
 
@@ -17,37 +16,6 @@ interface BaseButtonProps {
 }
 
 type ButtonProps = Partial<BaseButtonProps & React.HTMLAttributes<HTMLButtonElement>>
-
-const StyledButton = styled<any, any>('button', {
-  display: 'inline-block',
-  padding: '12px 20px',
-  textAlign: 'center',
-  textDecoration: 'none',
-  outline: 0,
-  variants: {
-    iconPosition: {
-      left: {
-        '& span': {
-          marginRight: '5px',
-        },
-      },
-      right: {
-        '& span': {
-          marginLeft: '5px',
-        },
-      },
-      top: {
-        '& span': {
-          marginBottom: '5px',
-          display: 'block',
-        },
-      },
-    },
-  },
-  '& span': {
-    color: 'inherit',
-  },
-})
 
 const Button = React.forwardRef(function Button(props: ButtonProps, ref: React.Ref<HTMLButtonElement>) {
   const {
@@ -71,9 +39,9 @@ const Button = React.forwardRef(function Button(props: ButtonProps, ref: React.R
   }
 
   return (
-    <StyledButton iconPosition={iconPosition} {...restProps} ref={ref}>
+    <button {...restProps} ref={ref}>
       {content}
-    </StyledButton>
+    </button>
   )
 })
 
