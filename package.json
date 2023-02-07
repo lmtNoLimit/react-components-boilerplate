@@ -14,7 +14,7 @@
   "type": "module",
   "keywords": [],
   "author": "PageFly",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@stitches/react": "^1.2.8"
   },
